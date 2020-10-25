@@ -29,7 +29,10 @@ class Events(commands.Cog):
                     "Both error and command will be ignored."
                 )
 
-            await ctx.send(f"There was an error processing the command ;-;\n{error}")
+            embed=discord.Embed(color=0xf04747)
+            embed.set_author(name="An Exception Occured", icon_url="https://media.discordapp.net/attachments/764915659002871858/769763505318395914/impact-discord.png")
+            embed.add_field(name="The Impact Discord bot has faced a critical error and could not process your command.", value=error, inline=False)
+            await ctx.send(embed=embed)
 
         elif isinstance(err, errors.CheckFailure):
             pass

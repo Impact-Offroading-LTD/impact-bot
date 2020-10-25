@@ -81,7 +81,7 @@ class Information(commands.Cog):
 
     @commands.command(aliases=['ev'])
     async def events(self, ctx):
-        embed=discord.Embed(title="Your upcoming events",description="You currently have no active events on your impact account.", color=0x4776f0)
+        embed=discord.Embed(title=ev,description="You currently have no active events on your impact account.", color=0x4776f0)
         await ctx.send(embed=embed)
 
 def setup(bot):
