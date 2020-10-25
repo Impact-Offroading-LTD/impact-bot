@@ -67,7 +67,10 @@ class Information(commands.Cog):
             embed.add_field(name="Lynx API Version", value="LynxAPI " + str(output["version"]), inline=True)
             embed.add_field(name="Impact Version", value="Release v" + str(output["impactversion"]), inline=True)
             embed.add_field(name="Impact Auth2 Version", value="7.6", inline=True)
-            embed.add_field(name="Connection Status", value=":white_check_mark: Operational ", inline=True)
+            if(output["pingstatus"] == 2500):
+                embed.add_field(name="Connection Status", value=":ballot_box_with_check: Planned Outage ", inline=True)
+            else: 
+                embed.add_field(name="Connection Status", value=":white_check_mark: Operational ", inline=True)
             embed.add_field(name="API Status", value=str(output["pingstatus"]), inline=False)
         except:
             embed=discord.Embed(title="Lynx Impact API Status & Information", color=0xf04747)
